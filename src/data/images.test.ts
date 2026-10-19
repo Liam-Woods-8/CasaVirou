@@ -12,7 +12,8 @@ const PUBLIC_FILES = new Set(
 
 function filesFor(image: ImageRef): string[] {
   const fromSrcSet = image.srcSet?.split(',').map((c) => c.trim().split(/\s+/)[0]) ?? [];
-  return [image.src, ...fromSrcSet];
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+  return [image.src, ...fromSrcSet].map((file) => (base && file.startsWith(base) ? file.slice(base.length) : file));
 }
 
 const declared: { where: string; image: ImageRef }[] = PROJECTS.flatMap((p) => [
