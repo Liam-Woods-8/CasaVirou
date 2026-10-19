@@ -112,6 +112,11 @@ export const PROJECTS: Project[] = [
     output: 'garment',
     usesScraps: false,
     art: 'stripes',
+    cover: projectImage(
+      'reworked-tshirt',
+      'cover.png',
+      'Cropped grey T-shirt with raw, rolled hems laid flat',
+    ),
     requirements: [tshirt, scissors, tool('fabric-chalk', 'Fabric chalk', 'fabric-chalk', true)],
     steps: [
       {
@@ -157,6 +162,11 @@ export const PROJECTS: Project[] = [
     output: 'garment',
     usesScraps: true,
     art: 'hatch',
+    cover: projectImage(
+      'patchwork-shorts',
+      'cover.png',
+      'Denim shorts with contrasting patches sewn on the thighs',
+    ),
     requirements: [oldJeans, scrapFabric, thread, scissors, sewingMachine, pins, tool('seam-ripper', 'Seam ripper', 'seam-ripper', true)],
     steps: [
       {
@@ -208,6 +218,11 @@ export const PROJECTS: Project[] = [
     output: 'accessory',
     usesScraps: true,
     art: 'dots',
+    cover: projectImage(
+      'denim-patches',
+      'cover.png',
+      'Small denim patches with hand-sewn running-stitch borders',
+    ),
     requirements: [denimScraps, thread, scissors, needle],
     steps: [
       {
@@ -247,6 +262,11 @@ export const PROJECTS: Project[] = [
     output: 'accessory',
     usesScraps: true,
     art: 'weave',
+    cover: projectImage(
+      'denim-wallet',
+      'cover.png',
+      'Slim denim bifold wallet, slightly open to show the card slots',
+    ),
     requirements: [anyDenim, thread, snap, scissors, sewingMachine, tool('pins', 'Pins', 'pins', true)],
     steps: [
       {
@@ -292,6 +312,11 @@ export const PROJECTS: Project[] = [
     output: 'bag',
     usesScraps: true,
     art: 'plain',
+    cover: projectImage(
+      'canvas-zip-pouch',
+      'cover.png',
+      'Flat natural-canvas zip pouch closed on a grey backdrop',
+    ),
     requirements: [canvas, zipper, thread, scissors, sewingMachine, pins],
     steps: [
       {
@@ -335,6 +360,11 @@ export const PROJECTS: Project[] = [
     output: 'accessory',
     usesScraps: false,
     art: 'weave',
+    cover: projectImage(
+      'sweater-mittens',
+      'cover.png',
+      'A pair of wool mittens with ribbed sweater cuffs',
+    ),
     requirements: [sweater, thread, scissors, sewingMachine, pins],
     steps: [
       {
@@ -377,6 +407,11 @@ export const PROJECTS: Project[] = [
     output: 'accessory',
     usesScraps: true,
     art: 'dots',
+    cover: projectImage(
+      'scrap-scrunchie',
+      'cover.png',
+      'A gathered fabric scrunchie resting on linen',
+    ),
     requirements: [scrapFabric, elastic, thread, scissors, needle],
     steps: [
       {
@@ -415,6 +450,11 @@ export const PROJECTS: Project[] = [
     output: 'bag',
     usesScraps: false,
     art: 'hatch',
+    cover: projectImage(
+      'shoulder-bag',
+      'cover.png',
+      'Structured canvas shoulder bag with a zip top and webbing strap',
+    ),
     requirements: [canvas, webbing, zipper, thread, interfacing, scissors, sewingMachine, pins, iron],
     steps: [
       {
@@ -464,6 +504,11 @@ export const PROJECTS: Project[] = [
     output: 'accessory',
     usesScraps: false,
     art: 'stripes',
+    cover: projectImage(
+      'denim-bucket-hat',
+      'cover.png',
+      'Medium-wash denim bucket hat with topstitched brim rings',
+    ),
     requirements: [anyDenim, interfacing, thread, scissors, sewingMachine, pins, iron, measuringTape],
     steps: [
       {
@@ -556,6 +601,11 @@ export const PROJECTS: Project[] = [
     output: 'bag',
     usesScraps: false,
     art: 'stripes',
+    cover: projectImage(
+      'tshirt-tote',
+      'cover.png',
+      'Market tote made from a T-shirt, with knotted strips closing the bottom',
+    ),
     requirements: [tshirt, scissors, tool('fabric-chalk', 'Fabric chalk', 'fabric-chalk', true)],
     steps: [
       {
@@ -595,6 +645,11 @@ export const PROJECTS: Project[] = [
     output: 'bag',
     usesScraps: false,
     art: 'weave',
+    cover: projectImage(
+      'jean-leg-tote',
+      'cover.png',
+      'Denim tote sewn from jean legs, with the back pockets on the outside',
+    ),
     requirements: [oldJeans, thread, scissors, sewingMachine, pins],
     steps: [
       {
@@ -640,6 +695,11 @@ export const PROJECTS: Project[] = [
     output: 'garment',
     usesScraps: false,
     art: 'stripes',
+    cover: projectImage(
+      'boxy-crop-shirt',
+      'cover.png',
+      'Cropped button-up shirt with the collar kept and sleeves rolled',
+    ),
     requirements: [buttonUp, thread, scissors, sewingMachine, pins, measuringTape, tool('iron', 'Iron', 'iron', true)],
     steps: [
       {
@@ -685,6 +745,11 @@ export const PROJECTS: Project[] = [
     output: 'garment',
     usesScraps: false,
     art: 'hatch',
+    cover: projectImage(
+      'tapered-jeans',
+      'cover.png',
+      'Dark jeans that narrow from the knee to the hem',
+    ),
     requirements: [oldJeans, thread, sewingMachine, pins, seamRipper, tool('fabric-chalk', 'Fabric chalk', 'fabric-chalk', true)],
     steps: [
       {
@@ -729,6 +794,11 @@ export const PROJECTS: Project[] = [
     output: 'garment',
     usesScraps: true,
     art: 'plain',
+    cover: projectImage(
+      'knee-patch-repair',
+      'cover.png',
+      'A worn jean knee mended with a fabric patch and rows of running stitch',
+    ),
     requirements: [wornGarment, scrapFabric, thread, needle, scissors, tool('pins', 'Pins', 'pins', true)],
     steps: [
       {
@@ -773,6 +843,11 @@ export const PROJECTS: Project[] = [
     output: 'garment',
     usesScraps: true,
     art: 'grid',
+    cover: projectImage(
+      'sashiko-mending',
+      'cover.png',
+      'Worn indigo cloth reinforced with a grid of white sashiko stitches',
+    ),
     requirements: [
       wornGarment,
       thread,
@@ -822,6 +897,11 @@ export const PROJECTS: Project[] = [
     output: 'garment',
     usesScraps: false,
     art: 'weave',
+    cover: projectImage(
+      'cropped-zip-hoodie',
+      'cover.png',
+      'Cropped grey hoodie with a centre-front zipper and ribbed hem',
+    ),
     requirements: [hoodie, zipper, thread, scissors, sewingMachine, pins, seamRipper, measuringTape],
     steps: [
       {
@@ -867,6 +947,11 @@ export const PROJECTS: Project[] = [
     output: 'bag',
     usesScraps: true,
     art: 'dots',
+    cover: projectImage(
+      'drawstring-pouch',
+      'cover.png',
+      'Small drawstring pouch sewn from two contrasting scraps',
+    ),
     requirements: [scrapFabric, cord, thread, scissors, sewingMachine, pins],
     steps: [
       {
