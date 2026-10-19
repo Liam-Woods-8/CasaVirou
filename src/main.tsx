@@ -8,7 +8,7 @@ import './index.css';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ErrorBoundary>
-      <BrowserRouter basename="/casavirou">
+      <BrowserRouter basename="/CasaVirou">
         <App />
       </BrowserRouter>
     </ErrorBoundary>
