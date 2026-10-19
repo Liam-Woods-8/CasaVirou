@@ -113,7 +113,7 @@ export function Tutorial() {
 
         <div className="mt-8 grid gap-8 md:grid-cols-[minmax(0,5fr)_minmax(0,4fr)] md:gap-12">
           <Artwork
-            image={step.image}
+            image={step.image ?? project.cover}
             sizes="(min-width: 768px) 55vw, 100vw"
             art={project.art}
             icon={project.output}

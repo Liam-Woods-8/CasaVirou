@@ -93,7 +93,15 @@ export function ExplorePostPage() {
       )}
 
       <div className="mt-6 grid gap-8 md:grid-cols-2 lg:gap-16">
-        <Artwork photo={post.photo} art={post.art} icon={project?.output} alt={post.title} className="border border-ink" />
+        <Artwork
+          photo={post.photo}
+          image={project?.cover}
+          art={post.art}
+          icon={project?.output}
+          alt={post.title}
+          sizes="(min-width: 768px) 45vw, 100vw"
+          className="border border-ink"
+        />
 
         <div className="flex flex-col">
           <Eyebrow>

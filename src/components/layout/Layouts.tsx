@@ -3,6 +3,7 @@ import { Link, NavLink, Navigate, Outlet, useLocation } from 'react-router';
 import { Compass, Home, Layers, Plus, Shirt, User } from 'lucide-react';
 import { useCurrentUser } from '../../store/selectors';
 import { STORAGE_ERROR_EVENT } from '../../store/useStore';
+import { ErrorBoundary } from '../ErrorBoundary';
 import { Button } from '../ui/Button';
 
 const NAV = [
@@ -26,6 +27,15 @@ function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => window.scrollTo(0, 0), [pathname]);
   return null;
+}
+
+function RoutedOutlet() {
+  const { pathname } = useLocation();
+  return (
+    <ErrorBoundary resetKey={pathname}>
+      <Outlet />
+    </ErrorBoundary>
+  );
 }
 
 function StorageErrorBanner() {
@@ -152,7 +162,7 @@ export function AppLayout() {
       <StorageErrorBanner />
       {user ? <SignedInHeader /> : <SignedOutHeader />}
       <main className={`flex-1 ${user ? 'pb-20 md:pb-0' : ''}`}>
-        <Outlet />
+        <RoutedOutlet />
       </main>
       <div className={user ? 'hidden md:block' : ''}>
         <Footer />
@@ -168,7 +178,7 @@ export function FocusLayout() {
     <div className="min-h-dvh">
       <ScrollToTop />
       <StorageErrorBanner />
-      <Outlet />
+      <RoutedOutlet />
     </div>
   );
 }

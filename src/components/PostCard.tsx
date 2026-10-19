@@ -12,9 +12,11 @@ export function PostCard({ post }: { post: ExplorePost }) {
       <div className="overflow-hidden border border-line transition-colors group-hover:border-ink">
         <Artwork
           photo={post.photo}
+          image={project?.cover}
           art={post.art}
           icon={project?.output}
           alt={post.title}
+          sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
           className="transition-transform duration-500 group-hover:scale-[1.03]"
         />
       </div>
