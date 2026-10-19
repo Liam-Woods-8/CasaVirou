@@ -1,0 +1,75 @@
+---
+description: CasaVirou Gen 1 product context: scope, navigation, matching engine, design system, tech stack, and verification
+alwaysApply: true
+---
+
+# CasaVirou: Product Context
+
+CasaVirou is a responsive clothing-upcycling web app. Every feature should help users answer:
+**"What can I make with what I already have?"**
+
+## Core Loop
+
+Materials → Discovery → Project → Tutorial → Complete → Share → Explore
+
+## Navigation (do not add top-level items)
+
+- **Primary:** Home, Projects, Materials, Explore, Profile
+- **Projects:** Discover, My Projects
+- **My Projects:** Saved, In Progress, Completed
+- **Desktop:** top nav bar with the primary items plus a "+ Add Material" action.
+- **Mobile:** bottom tab bar with the primary items.
+- **Task Focus Mode:** hide the header and footer on `/materials/new`, `/projects/:id/tutorial`, `/projects/:id/complete`, and `/projects/:id/share`.
+
+## Out of Scope (do not introduce)
+
+AI recommendations, marketplace, payments, messaging, followers, likes, comments, achievements, or any other social feature that isn't needed. Sharing a finished project is allowed; social graphs and engagement mechanics are not.
+
+## Matching Engine
+
+Matching must stay deterministic and rules-based (no ML or LLM logic). Always validate missing requirements before calculating match scores. Use exactly this model:
+
+```
+Material Score (Sm) = Matched Non-Optional Materials / Total Non-Optional Materials
+Tool Score (St)     = Matched Non-Optional Tools / Total Non-Optional Tools
+Match %             = (Sm * 0.60 + St * 0.40) * 100
+```
+
+| Classification | Match % |
+|---|---|
+| You Can Make Now | == 100 |
+| Almost Ready | 70–99 (must show an explicit missing list, e.g. "Missing: Fabric Glue") |
+| Possible Projects | 40–69 |
+| Low Match | < 40 |
+
+## Design
+
+- Minimal, editorial, fashion-oriented. Think lookbook, not dashboard.
+- Mainly monochrome (black, white, and grays), with color reserved for status accents:
+  - 100% match: `bg-emerald-100 text-emerald-800`
+  - Missing items: `bg-amber-100 text-amber-800`
+- Strong typography carries the hierarchy: large headings, generous whitespace.
+- Image-focused layouts where the garment or project photo leads.
+- Mobile-first: clean at 375px+ and scaling to desktop at 1024px+.
+- Every interactive element has hover and focus states (`hover:... transition-all`, visible focus ring).
+- Avoid a generic SaaS look: no gradient hero banners, stat-card grids, heavy drop shadows, or rounded pill-button clutter.
+
+## Tech Stack
+
+- React + TypeScript + Tailwind CSS. Use Lucide React for all icons.
+- State: React Context or Zustand with localStorage persistence.
+- Functional components with strict TypeScript types (`type` or `interface`).
+- Style with Tailwind utility classes only.
+- Never hardcode secrets.
+
+## Engineering
+
+- Reuse the existing architecture, stores, and components before creating new ones.
+- Prefer the simplest solution that works.
+- Don't add dependencies unless there's no reasonable in-repo alternative.
+- Preserve existing working features; don't refactor unrelated code.
+- Run relevant tests after major changes.
+
+## Verification
+
+After modifying files, run `npx tsc --noEmit` or `npm run build` and confirm zero TypeScript or syntax errors. Fix any errors before reporting completion.

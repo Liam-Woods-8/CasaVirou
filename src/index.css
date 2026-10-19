@@ -1,0 +1,75 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-paper: #f4f2ed;
+  --color-paper-deep: #e9e6df;
+  --color-ink: #141414;
+  --color-muted: #6b6a66;
+  --color-line: #d6d3cb;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-ink text-paper;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@utility display {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+}
+
+/* Textile-inspired artwork used in place of photos. */
+@utility art-stripes {
+  background-color: var(--color-paper-deep);
+  background-image: repeating-linear-gradient(90deg, rgb(20 20 20 / 0.09) 0 2px, transparent 2px 14px);
+}
+@utility art-grid {
+  background-color: var(--color-paper-deep);
+  background-image:
+    linear-gradient(rgb(20 20 20 / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(20 20 20 / 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+@utility art-dots {
+  background-color: var(--color-paper-deep);
+  background-image: radial-gradient(rgb(20 20 20 / 0.16) 1.2px, transparent 1.4px);
+  background-size: 12px 12px;
+}
+@utility art-hatch {
+  background-color: #dedad2;
+  background-image: repeating-linear-gradient(45deg, rgb(20 20 20 / 0.08) 0 1px, transparent 1px 9px);
+}
+@utility art-weave {
+  background-color: #d9d5cc;
+  background-image:
+    repeating-linear-gradient(0deg, rgb(20 20 20 / 0.07) 0 3px, transparent 3px 8px),
+    repeating-linear-gradient(90deg, rgb(255 255 255 / 0.25) 0 3px, transparent 3px 8px);
+}
+@utility art-plain {
+  background-color: #e3e0d8;
+}
