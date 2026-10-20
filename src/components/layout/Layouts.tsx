@@ -16,9 +16,8 @@ const NAV = [
 
 export function Logo() {
   return (
-    <Link to="/" className="flex items-center gap-2 font-mono text-base font-bold uppercase tracking-[0.2em]">
-      <span aria-hidden className="inline-block h-3 w-3 bg-ink" />
-      CasaVirou
+    <Link to="/" className="inline-flex items-center transition-opacity hover:opacity-60">
+      <img src={`${import.meta.env.BASE_URL}logo.png`} alt="CasaVirou" className="h-7 w-auto sm:h-8" />
     </Link>
   );
 }
